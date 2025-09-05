@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFP Submission</title>
+</head>
+<body>
+
+    <form action="https://primary-production-2ca74.up.railway.app/webhook-test/6e5943d1-8be4-4062-a4a3-9bc861bd2d24" method="post" enctype="multipart/form-data">
+        <!-- Client Name -->
+        <label for="client">Client:</label><br>
+        <input type="text" id="client" name="client" required><br><br>
+
+        <!-- Due Date -->
+        <label for="due-date">Due Date:</label><br>
+        <input type="date" id="due-date" name="due-date" required><br><br>
+
+        <!-- RFP Document -->
+        <label for="rfp-document">RFP Document:</label><br>
+        <input type="file" id="rfp-document" name="rfp-document" required multiple><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
