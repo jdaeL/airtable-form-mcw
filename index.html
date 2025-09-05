@@ -8,20 +8,23 @@
 <body>
 
     <form action="https://primary-production-2ca74.up.railway.app/webhook-test/6e5943d1-8be4-4062-a4a3-9bc861bd2d24" method="post" enctype="multipart/form-data">
-        <!-- Client Name -->
-        <label for="client">Client:</label><br>
-        <input type="text" id="client" name="client" required><br><br>
-
-        <!-- Due Date -->
-        <label for="due-date">Due Date:</label><br>
-        <input type="date" id="due-date" name="due-date" required><br><br>
-
-        <!-- RFP Document -->
-        <label for="rfp-document">RFP Document:</label><br>
-        <input type="file" id="rfp-document" name="rfp-document" required multiple><br><br>
-
-        <!-- Submit Button -->
-        <button type="submit">Submit</button>
+    <label for="client">Client Name:</label>
+    <input type="text" id="client" name="client" required>
+    
+    <label for="dueDate">Due Date:</label>
+    <input type="date" id="dueDate" name="dueDate" required>
+    
+    <label for="priorityRank">Priority Rank:</label>
+    <select id="priorityRank" name="priorityRank">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select>
+    
+    <label for="rfpDocs">RFP Documents:</label>
+    <input type="file" id="rfpDocs" name="rfp-document" multiple required>
+    
+    <button type="submit">Submit</button>
     </form>
 
 </body>
