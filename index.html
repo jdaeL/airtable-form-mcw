@@ -4,27 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RFP Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        label, input, select, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 12px;
+            box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        }
+        input, select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
     <form action="https://primary-production-2ca74.up.railway.app/webhook-test/6e5943d1-8be4-4062-a4a3-9bc861bd2d24" method="post" enctype="multipart/form-data">
-    <label for="client">Client Name:</label>
-    <input type="text" id="client" name="client" required>
-    
-    <label for="dueDate">Due Date:</label>
-    <input type="date" id="dueDate" name="dueDate" required>
-    
-    <label for="priorityRank">Priority Rank:</label>
-    <select id="priorityRank" name="priorityRank">
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-    </select>
-    
-    <label for="rfpDocs">RFP Documents:</label>
-    <input type="file" id="rfpDocs" name="rfp-document" multiple required>
-    
-    <button type="submit">Submit</button>
+        <label for="client">Client Name:</label>
+        <input type="text" id="client" name="client" required>
+        
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" name="dueDate" required>
+        
+        <label for="priorityRank">Priority Rank:</label>
+        <select id="priorityRank" name="priorityRank">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        
+        <label for="rfpDocs">RFP Documents:</label>
+        <input type="file" id="rfpDocs" name="rfp-document" multiple required>
+        
+        <button type="submit">Submit</button>
     </form>
 
 </body>
