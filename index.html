@@ -31,7 +31,7 @@
                         file:text-sm file:font-semibold
                         file:bg-blue-50 file:text-blue-700
                         hover:file:bg-blue-100">
-                    <p class="text-xs text-gray-500 mt-1">Attachments must be less than 25MB total. Accepted formats: PDF, DOC, DOCX, TXT</p>
+                    <p class="text-xs text-gray-500 mt-1"> <!-- Attachments must be less than 25MB total. Accepted formats: PDF, DOC, DOCX, TXT--> </p>
                 </div>
             </div>
 
@@ -48,7 +48,7 @@
                         <!-- Project Information -->
                         <div class="mb-4">
                             <label for="opportunityName" class="block text-sm font-medium text-gray-600 mb-1">Opportunity Name <span class="text-red-500">*</span></label>
-                            <input type="text" id="opportunityName" name="opportunityName" placeholder="e.g., Affordable Housing Development - Penticton" value="Penticton Affordable Housing Development" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" id="opportunityName" name="opportunityName" placeholder="e.g., Affordable Housing Development - Penticton" value="Opportunity Name Example" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
                         
                         <div class="flex flex-col md:flex-row gap-4 mb-4">
@@ -59,7 +59,6 @@
                             <div class="flex-1">
                                 <label for="officePursuing" class="block text-sm font-medium text-gray-600 mb-1">Office Pursuing <span class="text-red-500">*</span></label>
                                 <select id="officePursuing" name="officePursuing" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="">Select Office</option>
                                     <option value="Vancouver" selected>Vancouver</option>
                                     <option value="Edmonton">Edmonton</option>
                                     <option value="Calgary">Calgary</option>
@@ -70,7 +69,6 @@
                         <div class="mb-6">
                             <label for="market" class="block text-sm font-medium text-gray-600 mb-1">Market <span class="text-red-500">*</span></label>
                             <select id="market" name="market" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option value="">Select Market</option>
                                 <option value="Commercial">Commercial</option>
                                 <option value="Educational">Educational</option>
                                 <option value="Government">Government</option>
@@ -121,7 +119,6 @@
                             <div class="flex-1">
                                 <label for="proposalType" class="block text-sm font-medium text-gray-600 mb-1">Proposal Type <span class="text-red-500">*</span></label>
                                 <select id="proposalType" name="proposalType" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="">Select Type</option>
                                     <option value="Long Form Letter" selected>Long Form Letter</option>
                                     <option value="Short Form Letter">Short Form Letter</option>
                                     <option value="WeLight">WeLight</option>
@@ -137,7 +134,6 @@
                             <div class="flex-1">
                                 <label for="priorityRank" class="block text-sm font-medium text-gray-600 mb-1">Priority Rank <span class="text-red-500">*</span></label>
                                 <select id="priorityRank" name="priorityRank" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="">Select Priority</option>
                                     <option value="High">High - Full Proposal Support</option>
                                     <option value="Medium" selected>Medium - Enhanced Fee Letter</option>
                                     <option value="Low">Low - Basic Fee Letter</option>
@@ -146,7 +142,6 @@
                             <div class="flex-1">
                                 <label for="pursuitPhase" class="block text-sm font-medium text-gray-600 mb-1">Pursuit Phase <span class="text-red-500">*</span></label>
                                 <select id="pursuitPhase" name="pursuitPhase" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option value="">Select Phase</option>
                                     <option value="Developing Pursuit">Developing Pursuit</option>
                                     <option value="Active" selected>Active</option>
                                     <option value="Closed Won">Closed Won</option>
