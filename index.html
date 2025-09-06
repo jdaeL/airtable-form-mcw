@@ -4,240 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RFP Submission Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-        .form-container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-        }
-        .form-section {
-            margin-bottom: 25px;
-            padding: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            background-color: #fafafa;
-        }
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #333;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-        input, select, textarea {
-            display: block;
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-        textarea {
-            min-height: 80px;
-            resize: vertical;
-        }
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .checkbox-container input[type="checkbox"] {
-            width: auto;
-            margin-right: 10px;
-            margin-bottom: 0;
-        }
-        .required {
-            color: red;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .form-row {
-            display: flex;
-            gap: 15px;
-        }
-        .form-row > div {
-            flex: 1;
-        }
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-            }
-        }
-        .help-text {
-            font-size: 12px;
-            color: #666;
-            margin-top: -10px;
-            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
-<body>
-    <div class="form-container">
-        <h1>RFP Submission Form</h1>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">RFP Submission Form</h1>
         
         <form action="https://primary-production-2ca74.up.railway.app/webhook/6e5943d1-8be4-4062-a4a3-9bc861bd2d24" method="post" enctype="multipart/form-data">
             
-            <div class="form-section">
-                <div class="section-title">Project Information</div>
-                
-                <label for="opportunityName">Opportunity Name <span class="required">*</span></label>
-                <input type="text" id="opportunityName" name="opportunityName" placeholder="e.g., Affordable Housing Development - Penticton" value="Penticton Affordable Housing Development" required>
-                
-                <div class="form-row">
-                    <div>
-                        <label for="dueDate">Due Date <span class="required">*</span></label>
-                        <input type="date" id="dueDate" name="dueDate" value="2025-10-15" required>
-                    </div>
-                    <div>
-                        <label for="officePursuing">Office Pursuing <span class="required">*</span></label>
-                        <select id="officePursuing" name="officePursuing" required>
-                            <option value="">Select Office</option>
-                            <option value="Vancouver" selected>Vancouver</option>
-                            <option value="Edmonton">Edmonton</option>
-                            <option value="Calgary">Calgary</option>
-                        </select>
-                    </div>
+            <!-- RFP Documents Section -->
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
+                <div class="flex justify-between items-center pb-2 mb-4 border-b-2 border-blue-500">
+                    <span class="text-lg font-semibold text-gray-700">RFP Documents</span>
                 </div>
-                
-                <label for="market">Market <span class="required">*</span></label>
-                <select id="market" name="market" required>
-                    <option value="">Select Market</option>
-                    <option value="Commercial">Commercial</option>
-                    <option value="Educational">Educational</option>
-                    <option value="Government">Government</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Industrial">Industrial</option>
-                    <option value="Institutional">Institutional</option>
-                    <option value="Recreational">Recreational</option>
-                    <option value="Residential" selected>Residential</option>
-                    <option value="Transportation">Transportation</option>
-                </select>
-            </div>
-
-            <div class="form-section">
-                <div class="section-title">Client Information</div>
-                
-                <div class="form-row">
-                    <div>
-                        <label for="client">Client Company <span class="required">*</span></label>
-                        <input type="text" id="client" name="client" placeholder="e.g., BC Housing" value="BC Housing" required>
-                    </div>
-                    <div>
-                        <label for="owner">Owner Company</label>
-                        <input type="text" id="owner" name="owner" placeholder="e.g., Penticton Regional Housing Corp" value="Penticton Regional Housing Corp">
-                    </div>
-                </div>
-                
-                <label for="clientContact">Client Contact <span class="required">*</span></label>
-                <input type="text" id="clientContact" name="clientContact" placeholder="Primary contact person" value="Joe Doe" required>
-            </div>
-
-            <div class="form-section">
-                <div class="section-title">Project Details</div>
-                
-                <label for="disciplines">Disciplines <span class="required">*</span></label>
-                <select id="disciplines" name="disciplines" multiple required style="height: 120px;">
-                    <option value="Commissioning/Recommissioning">Commissioning/Recommissioning</option>
-                    <option value="Electrical" selected>Electrical</option>
-                    <option value="Energy Modelling" selected>Energy Modelling</option>
-                    <option value="Fire Protection" selected>Fire Protection</option>
-                    <option value="Forensics">Forensics</option>
-                    <option value="ICAT/DATA" selected>ICAT/DATA</option>
-                    <option value="Lighting Design">Lighting Design</option>
-                    <option value="Mechanical" selected>Mechanical</option>
-                    <option value="Sustainability">Sustainability</option>
-                </select>
-                <div class="help-text">Hold Ctrl (or Cmd on Mac) to select multiple disciplines</div>
-                
-                <div class="form-row">
-                    <div>
-                        <label for="proposalType">Proposal Type <span class="required">*</span></label>
-                        <select id="proposalType" name="proposalType" required>
-                            <option value="">Select Type</option>
-                            <option value="Long Form Letter" selected>Long Form Letter</option>
-                            <option value="Short Form Letter">Short Form Letter</option>
-                            <option value="WeLight">WeLight</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="probability">Probability of Winning (%) <span class="required">*</span></label>
-                        <input type="number" id="probability" name="probability" min="0" max="100" placeholder="e.g., 75" value="75" required>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div>
-                        <label for="priorityRank">Priority Rank <span class="required">*</span></label>
-                        <select id="priorityRank" name="priorityRank" required>
-                            <option value="">Select Priority</option>
-                            <option value="High">High - Full Proposal Support</option>
-                            <option value="Medium" selected>Medium - Enhanced Fee Letter</option>
-                            <option value="Low">Low - Basic Fee Letter</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="pursuitPhase">Pursuit Phase <span class="required">*</span></label>
-                        <select id="pursuitPhase" name="pursuitPhase" required>
-                            <option value="">Select Phase</option>
-                            <option value="Developing Pursuit">Developing Pursuit</option>
-                            <option value="Active" selected>Active</option>
-                            <option value="Closed Won">Closed Won</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="checkbox-container">
-                    <input type="checkbox" id="prime" name="prime" checked>
-                    <label for="prime">Prime Consultant</label>
+                <div class="mb-4">
+                    <label for="rfpDocs" class="block text-sm font-medium text-gray-600 sr-only">RFP Documents</label>
+                    <input type="file" id="rfpDocs" name="rfp-document" multiple required accept=".pdf,.doc,.docx,.txt" class="block w-full text-sm text-gray-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-blue-50 file:text-blue-700
+                        hover:file:bg-blue-100">
+                    <p class="text-xs text-gray-500 mt-1">Attachments must be less than 25MB total. Accepted formats: PDF, DOC, DOCX, TXT</p>
                 </div>
             </div>
 
-            <div class="form-section">
-                <div class="section-title">Additional Information</div>
-                
-                <label for="notes">Notes</label>
-                <textarea id="notes" name="notes" placeholder="Any additional information about this opportunity, special requirements, or considerations...">This is a sample note with some pre-filled text.</textarea>
-                
-                <label for="rfpDocs">RFP Documents <span class="required">*</span></label>
-                <input type="file" id="rfpDocs" name="rfp-document" multiple required accept=".pdf,.doc,.docx,.txt">
-                <div class="help-text">Attachments must be less than 25MB total. Accepted formats: PDF, DOC, DOCX, TXT</div>
+            <!-- Additional Information Section with Collapsible Dropdown -->
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer pb-2 mb-4 border-b-2 border-blue-500">
+                        <span class="text-base font-medium text-gray-600">Additional Information</span>
+                        <svg class="h-5 w-5 text-gray-500 transform transition-transform duration-200 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4">
+                        <!-- Project Information -->
+                        <div class="mb-4">
+                            <label for="opportunityName" class="block text-sm font-medium text-gray-600 mb-1">Opportunity Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="opportunityName" name="opportunityName" placeholder="e.g., Affordable Housing Development - Penticton" value="Penticton Affordable Housing Development" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row gap-4 mb-4">
+                            <div class="flex-1">
+                                <label for="dueDate" class="block text-sm font-medium text-gray-600 mb-1">Due Date <span class="text-red-500">*</span></label>
+                                <input type="date" id="dueDate" name="dueDate" value="2025-10-15" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="flex-1">
+                                <label for="officePursuing" class="block text-sm font-medium text-gray-600 mb-1">Office Pursuing <span class="text-red-500">*</span></label>
+                                <select id="officePursuing" name="officePursuing" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Office</option>
+                                    <option value="Vancouver" selected>Vancouver</option>
+                                    <option value="Edmonton">Edmonton</option>
+                                    <option value="Calgary">Calgary</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="market" class="block text-sm font-medium text-gray-600 mb-1">Market <span class="text-red-500">*</span></label>
+                            <select id="market" name="market" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Market</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Educational">Educational</option>
+                                <option value="Government">Government</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Industrial">Industrial</option>
+                                <option value="Institutional">Institutional</option>
+                                <option value="Recreational">Recreational</option>
+                                <option value="Residential" selected>Residential</option>
+                                <option value="Transportation">Transportation</option>
+                            </select>
+                        </div>
+
+                        <!-- Client Information -->
+                        <div class="flex flex-col md:flex-row gap-4 mb-4">
+                            <div class="flex-1">
+                                <label for="client" class="block text-sm font-medium text-gray-600 mb-1">Client Company <span class="text-red-500">*</span></label>
+                                <input type="text" id="client" name="client" placeholder="e.g., BC Housing" value="BC Housing" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="flex-1">
+                                <label for="owner" class="block text-sm font-medium text-gray-600 mb-1">Owner Company</label>
+                                <input type="text" id="owner" name="owner" placeholder="e.g., Penticton Regional Housing Corp" value="Penticton Regional Housing Corp" class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="clientContact" class="block text-sm font-medium text-gray-600 mb-1">Client Contact <span class="text-red-500">*</span></label>
+                            <input type="text" id="clientContact" name="clientContact" placeholder="Primary contact person" value="Joe Doe" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <!-- Project Details -->
+                        <div class="mb-4">
+                            <label for="disciplines" class="block text-sm font-medium text-gray-600 mb-1">Disciplines <span class="text-red-500">*</span></label>
+                            <select id="disciplines" name="disciplines" multiple required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" style="height: 120px;">
+                                <option value="Commissioning/Recommissioning">Commissioning/Recommissioning</option>
+                                <option value="Electrical" selected>Electrical</option>
+                                <option value="Energy Modelling" selected>Energy Modelling</option>
+                                <option value="Fire Protection" selected>Fire Protection</option>
+                                <option value="Forensics">Forensics</option>
+                                <option value="ICAT/DATA" selected>ICAT/DATA</option>
+                                <option value="Lighting Design">Lighting Design</option>
+                                <option value="Mechanical" selected>Mechanical</option>
+                                <option value="Sustainability">Sustainability</option>
+                            </select>
+                            <p class="text-xs text-gray-500 mt-1">Hold Ctrl (or Cmd on Mac) to select multiple disciplines</p>
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row gap-4 mb-4">
+                            <div class="flex-1">
+                                <label for="proposalType" class="block text-sm font-medium text-gray-600 mb-1">Proposal Type <span class="text-red-500">*</span></label>
+                                <select id="proposalType" name="proposalType" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Type</option>
+                                    <option value="Long Form Letter" selected>Long Form Letter</option>
+                                    <option value="Short Form Letter">Short Form Letter</option>
+                                    <option value="WeLight">WeLight</option>
+                                </select>
+                            </div>
+                            <div class="flex-1">
+                                <label for="probability" class="block text-sm font-medium text-gray-600 mb-1">Probability of Winning (%) <span class="text-red-500">*</span></label>
+                                <input type="number" id="probability" name="probability" min="0" max="100" placeholder="e.g., 75" value="75" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row gap-4 mb-4">
+                            <div class="flex-1">
+                                <label for="priorityRank" class="block text-sm font-medium text-gray-600 mb-1">Priority Rank <span class="text-red-500">*</span></label>
+                                <select id="priorityRank" name="priorityRank" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Priority</option>
+                                    <option value="High">High - Full Proposal Support</option>
+                                    <option value="Medium" selected>Medium - Enhanced Fee Letter</option>
+                                    <option value="Low">Low - Basic Fee Letter</option>
+                                </select>
+                            </div>
+                            <div class="flex-1">
+                                <label for="pursuitPhase" class="block text-sm font-medium text-gray-600 mb-1">Pursuit Phase <span class="text-red-500">*</span></label>
+                                <select id="pursuitPhase" name="pursuitPhase" required class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select Phase</option>
+                                    <option value="Developing Pursuit">Developing Pursuit</option>
+                                    <option value="Active" selected>Active</option>
+                                    <option value="Closed Won">Closed Won</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mt-4 mb-6">
+                            <input type="checkbox" id="prime" name="prime" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                            <label for="prime" class="ml-2 text-sm font-medium text-gray-600">Prime Consultant</label>
+                        </div>
+
+                        <!-- Notes -->
+                        <div>
+                            <label for="notes" class="block text-sm font-medium text-gray-600 mb-1">Notes</label>
+                            <textarea id="notes" name="notes" placeholder="Any additional information about this opportunity, special requirements, or considerations..." class="w-full p-2.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 h-24 resize-y">This is a sample note with some pre-filled text.</textarea>
+                        </div>
+
+                    </div>
+                </details>
             </div>
 
-            <button type="submit">Submit RFP</button>
+            <button type="submit" class="w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg hover:bg-blue-600 transition-colors duration-200">
+                Submit RFP
+            </button>
         </form>
     </div>
 </body>
